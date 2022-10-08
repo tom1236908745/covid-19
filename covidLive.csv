@@ -1,7 +1,5 @@
-#,"Country,
-Other","Total
-Cases","Total
-Deaths","New
+#,"Country","Total
+Cases","TotalDeaths","New
 Deaths","Total
 Recovered","Active
 Cases","Serious,
