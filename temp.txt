@@ -1,0 +1,94 @@
+for i, el in enumerate(train["Total\r\nCases"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,2] = float(el)
+    
+for i, el in enumerate(data["TotalDeaths"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,3] = float(el)
+    
+data["TotalDeaths"].fillna(data["TotalDeaths"].mean(), inplace=True)
+
+
+for i, el in enumerate(data["New\r\nDeaths"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,4] = float(el)
+    
+data["New\r\nDeaths"].fillna(data["New\r\nDeaths"].mean(), inplace=True)
+
+for i, el in enumerate(data["Total\r\nRecovered"]):
+    if type(el) == str:
+        el = el.replace(",","")
+        data.iat[i,5] = float(el)
+        
+data.head(4)
+data["Total\r\nRecovered"].fillna(data["Total\r\nRecovered"].mean(), inplace=True)
+
+for i, el in enumerate(data["Active\r\nCases"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,6] = float(el)
+    
+data["Active\r\nCases"].fillna(data["Active\r\nCases"].mean(), inplace=True)
+
+for i, el in enumerate(data["Serious,\r\nCritical"]):
+    if type(el) == str:
+        el = el.replace(",","")
+        data.iat[i,7] = float(el)
+data["Serious,\r\nCritical"].fillna(data["Serious,\r\nCritical"].mean(), inplace=True)
+
+for i, el in enumerate(data["Tot Cases/\r\n1M pop"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,8] = float(el)
+    
+data["Tot Cases/\r\n1M pop"].fillna(data["Tot Cases/\r\n1M pop"].mean(), inplace=True)
+
+for i, el in enumerate(data["Deaths/\r\n1M pop"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,9] = float(el)
+    
+data["Deaths/\r\n1M pop"].fillna(data["Deaths/\r\n1M pop"].mean(), inplace=True)
+
+
+for i, el in enumerate(data["Total\r\nTests"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,10] = float(el)
+    
+data["Total\r\nTests"].fillna(data["Total\r\nTests"].mean(), inplace=True)
+
+for i, el in enumerate(data["Tests/\r\n1M pop"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,11] = float(el)
+    
+data["Tests/\r\n1M pop"].fillna(data["Tests/\r\n1M pop"].mean(), inplace=True)
+
+for i, el in enumerate(data["Population"]):
+    
+    if type(el) != str:
+        continue
+    el = el.replace(",","")
+    data.iat[i,12] = float(el)
+    
+data["Population"].fillna(data["Population"].mean(), inplace=True)
